@@ -9,7 +9,7 @@
 void printMST(int parent[], int graph[MAX_VERTICES][MAX_VERTICES], int numVertices) {
     printf("Edge   Weight\n");
     for (int i = 1; i < numVertices; i++)
-        printf("%d - %d    %d \n", parent[i], i, graph[i][parent[i]]);
+        printf("%c - %c   %d \n", (char)(65 + parent[i]), (char)(65+ i), graph[i][parent[i]]);
 }
 
 int minKey(int key[], int mstSet[], int numVertices) {
@@ -52,12 +52,12 @@ void primMST(int graph[MAX_VERTICES][MAX_VERTICES], int numVertices) {
             // graph[u][v] is non zero only for adjacent vertices of m
             // mstSet[v] is false for vertices not yet included in MST
             // Update the key only if graph[u][v] is smaller than key[v]
-            printf("BEFORE: graph[%c][%c]: %d || mstSet[v]: %d || parent[%c]: %d || key[v]): %d\n", (char)65+u, (char)65+v, graph[u][v], mstSet[v], (char)65+v, parent[v], key[v]);
+            printf("BEFORE: graph[%c][%c]: %d || mstSet[v]: %d || parent[%c]: %d || key[v]: %d\n", (char)65+u, (char)65+v, graph[u][v], mstSet[v], (char)65+v, parent[v], key[v]);
             if (graph[u][v] && mstSet[v] == 0 && graph[u][v] < key[v]) {
                 parent[v] = u;
                 key[v] = graph[u][v];
             }
-            printf("AFTER: graph[%c][%c]: %d || mstSet[v]: %d || parent[%c]: %d || key[v]): %d\n\n", (char)65+u, (char)65+v, graph[u][v], mstSet[v], (char)65+v, parent[v], key[v]);
+            printf("AFTER: graph[%c][%c]: %d || mstSet[v]: %d || parent[%c]: %d || key[v]: %d\n\n", (char)65+u, (char)65+v, graph[u][v], mstSet[v], (char)65+v, parent[v], key[v]);
 
         }
     }
