@@ -8,11 +8,12 @@
 #include "searching_algo/searchInFile/run_fileSearch.h"
 #include "knapSack/run_knapSack.h"
 #include "fibonacci/run_Fibonacci.h"
+#include "spanningTree/run_SpanningTree.h"
 
 int main() {
     int choice;
 
-    printf("Select an option:\n1==Sorting Algo\n2==Searching Algo\n3==File Search\n4==Knap Sack\n5==Fibonacci\n0==Exit\n");
+    printf("Select an option:\n1==Sorting Algo\n2==Searching Algo\n3==File Search\n4==Knap Sack\n5==Fibonacci\n6==Spanning Tree\n0==Exit\n");
     printf("Enter your choice: ");
     scanf("%d", &choice);
     system("cls");
@@ -31,6 +32,9 @@ int main() {
             break;
         case 5:
             runFibonacci();
+            break;
+        case 6:
+            runSpanningTree();
             break;
         default:
             printf("Not in the menu!");
