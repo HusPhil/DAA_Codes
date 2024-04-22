@@ -1,13 +1,16 @@
 #include <stdio.h>
 #include "primsAlgo.h"
+#include "kruskalAlgo.h"
 
+#define MAX_VERTICES 100
+#define MAX_EDGES (MAX_VERTICES * (MAX_VERTICES - 1) / 2)
 
 void runSpanningTree() {
 
     int choice;
     do{
     system("cls");
-    printf("Select sorting algo:\n1 == Prim's Algorithm\n2 == HAks's Algorithm\n0 == Exit\n");
+    printf("Select sorting algo:\n1 == Prim's Algorithm\n2 == Kruskal's Algorithm\n0 == Exit\n");
     printf("Your choice: ");
     scanf("%d", &choice);
 
@@ -52,7 +55,7 @@ void runSpanningTree() {
             primMST(graph, numVertices);
             break;
         case 2: 
-            // selection_sort_pointers(arr, size);
+            kruskalMST(graph);
             break;
         default:
             printf("Invalid choice");
